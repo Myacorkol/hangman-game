@@ -49,6 +49,86 @@ body {
 }
 .guessed {
     background-color: transparent;
-    margin: -40px;
+    margin: -35px 0 35px;
+}
+.game-area__hint {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.game-area__text {
+    font-weight: 600;
+}
+.game-area__score {
+    color: red;
+}
+.game-area__keyboard {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+.game-area__keyboard button {
+    width: calc(100% / 9 - 5px);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #5E63BA;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    padding: 8px;
+    border: none;
+}
+.game-area__keyboard button:hover {
+    background-color: #8286c9;
+}
 
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.popup__content {
+    background-color: #fff;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 25px;
+}
+.popup__img {
+    width: 100%;
+    max-width: 130px;
+}
+.popup__title {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+.popup__text {
+    padding: 20px 0;
+    font-weight: 400;
+}
+.popup__text b{
+    color: #5E63BA;
+    font-weight: 700;
+}
+.popup__btn {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: aquamarine;
+    padding: 12px 23px;
+}
+.open {
+    display: flex;
 }
