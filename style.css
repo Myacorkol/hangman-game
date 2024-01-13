@@ -6,3 +6,49 @@
     box-sizing: border-box;
     font-family: "Open Sans, Sans-serif";
 }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: aquamarine;
+}
+.container {
+    width: 850px;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-end;
+    gap: 70px;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+.title {
+    font-size: 24px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.intro__img {
+    max-width: 300px;
+}
+.game-area__secret {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+.game-area__secret .letter {
+    width: 25px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+.guessed {
+    background-color: transparent;
+    margin: -40px;
+
+}
