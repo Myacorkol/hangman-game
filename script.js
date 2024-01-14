@@ -2,6 +2,8 @@
 const keyboard = document.querySelector(".game-area__keyboard");
 const WordsArea = document.querySelector(".game-area__secret");
 const hintText = document.querySelector(".game-area__text");
+const gameScore = document.querySelector(".game-area__score");
+const gameImg = document.querySelector(".intro__img");
 const wordList = [
     {
         word: "phuket",
@@ -266,11 +268,13 @@ const wordList = [
 ];
 let wordVue = '';
 let hintVue = '';
+let currentWord;
+let wrongAnswerCount = 0;
+const maxAttempts = 6;
 
 //Получаем случайный объект из колекции wordList
 function getRandomObject() {
     const randomIndex = Math.floor(Math.random() * wordList.length);
-    console.log(wordList[randomIndex])
     return wordList[randomIndex];
   }
 // Записываем информацию в переменные
@@ -278,9 +282,28 @@ function getRandomObject() {
     const randomObject = getRandomObject();
     wordVue = randomObject.word;
     hintVue = randomObject.hint;
-    console.log(wordVue);
+    currentWord = wordVue;
     hintText.innerText = hintVue;
     WordsArea.innerHTML = wordVue.split("").map(() => `<li class="letter"></li>`).join("");
+  }
+
+  const initGame = (button, clickedLetter) => {
+    console.log(button, clickedLetter);
+    //check exist or not
+    if (currentWord.includes(clickedLetter)) {
+        //show correct letters on the game desk
+        [...currentWord].forEach((letter, index) => {
+            if (letter === clickedLetter) {
+                WordsArea.querySelectorAll("li")[index].innerText = letter;
+                WordsArea.querySelectorAll("li")[index].classList.add("guessed");
+            }
+        })
+    } else {
+        wrongAnswerCount += 1;
+        gameImg.src = `images/hangman-${wrongAnswerCount}.svg`;
+    }
+    gameScore.innerText = `${wrongAnswerCount} / ${maxAttempts}`
+
   }
 
 //Create keyboard and add Event listeners for any button
