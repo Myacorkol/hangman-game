@@ -12,10 +12,13 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: aquamarine;
+    background-image: url('./images/thailand-1400x788-1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container {
     width: 850px;
-    background-color: #fff;
+    background-color: aqua;
     display: flex;
     align-items: flex-end;
     gap: 70px;
@@ -27,6 +30,13 @@ body {
     margin-top: 10px;
     text-align: center;
     text-transform: uppercase;
+}
+.subtitle{
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: orange;
 }
 .intro__img {
     max-width: 300px;
@@ -61,7 +71,7 @@ body {
     font-weight: 600;
 }
 .game-area__score {
-    color: red;
+    color: orange;
 }
 .game-area__keyboard {
     display: flex;
@@ -85,6 +95,10 @@ body {
 }
 .game-area__keyboard button:hover {
     background-color: #8286c9;
+}
+.game-area__keyboard button:disabled {
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 .popup {

@@ -35,7 +35,7 @@ const wordList = [
     },
     {
         word: "Spongebob",
-        hint: "He lives at the bottom of the ocean"
+        hint: "Are you ready, kids? Aye, aye, Captain! Who lives in a pineapple under the sea?"
     },
     {
         word: "history",
@@ -46,12 +46,12 @@ const wordList = [
         hint: "These people wear yellow robes and live in temples"
     },
     {
-        word: "jazz",
-        hint: "A genre of music characterized by improvisation and syncopation."
+        word: "instagram",
+        hint: "Which social network are tourists sure to post a couple of vacation photos to?"
     },
     {
-        word: "camera",
-        hint: "A device used to capture and record images or videos."
+        word: "passport",
+        hint: "What document must you have on hand when traveling?"
     },
     {
         word: "diamond",
@@ -62,12 +62,12 @@ const wordList = [
         hint: "An exciting or daring experience."
     },
     {
-        word: "science",
-        hint: "The systematic study of the structure and behavior of the physical and natural world."
+        word: "pattong",
+        hint: "Which Phuket beach is considered the most party place on the island?"
     },
     {
-        word: "bicycle",
-        hint: "A human-powered vehicle with two wheels."
+        word: "summer",
+        hint: "There is only one season in Phuket, which one?"
     },
     {
         word: "sunset",
@@ -75,11 +75,11 @@ const wordList = [
     },
     {
         word: "coffee",
-        hint: "A popular caffeinated beverage made from roasted coffee beans."
+        hint: "What will help you cheer up in the morning?"
     },
     {
-        word: "dance",
-        hint: "A rhythmic movement of the body often performed to music."
+        word: "motorbike",
+        hint: "The most common transport in Thailand and Asia in general"
     },
     {
         word: "galaxy",
@@ -119,7 +119,7 @@ const wordList = [
     },
     {
         word: "waterfall",
-        hint: "A cascade of water falling from a height."
+        hint: "You are walking through the jungle and hear the sound of falling water, what could it be?"
     },
     {
         word: "technology",
@@ -150,12 +150,12 @@ const wordList = [
         hint: "A building or outdoor area in which plays, movies, or other performances are staged."
     },
     {
-        word: "telephone",
-        hint: "A device used to transmit sound over long distances."
+        word: "monkeys",
+        hint: "small agile animals that live in the jungle and love bananas"
     },
     {
-        word: "language",
-        hint: "A system of communication consisting of words, gestures, and syntax."
+        word: "English",
+        hint: "What language do you need to know to communicate with foreigners?"
     },
     {
         word: "desert",
@@ -201,74 +201,11 @@ const wordList = [
         word: "tropical",
         hint: "Relating to or situated in the region between the Tropic of Cancer and the Tropic of Capricorn."
     },
-    {
-        word: "mysterious",
-        hint: "Difficult or impossible to understand, explain, or identify."
-    },
-    {
-        word: "enigma",
-        hint: "Something that is mysterious, puzzling, or difficult to understand."
-    },
-    {
-        word: "paradox",
-        hint: "A statement or situation that contradicts itself or defies intuition."
-    },
-    {
-        word: "puzzle",
-        hint: "A game, toy, or problem designed to test ingenuity or knowledge."
-    },
-    {
-        word: "whisper",
-        hint: "To speak very softly or quietly, often in a secretive manner."
-    },
-    {
-        word: "shadow",
-        hint: "A dark area or shape produced by an object blocking the light."
-    },
-    {
-        word: "secret",
-        hint: "Something kept hidden or unknown to others."
-    },
-    {
-        word: "curiosity",
-        hint: "A strong desire to know or learn something."
-    },
-    {
-        word: "unpredictable",
-        hint: "Not able to be foreseen or known beforehand; uncertain."
-    },
-    {
-        word: "obfuscate",
-        hint: "To confuse or bewilder someone; to make something unclear or difficult to understand."
-    },
-    {
-        word: "unveil",
-        hint: "To make known or reveal something previously secret or unknown."
-    },
-    {
-        word: "illusion",
-        hint: "A false perception or belief; a deceptive appearance or impression."
-    },
-    {
-        word: "moonlight",
-        hint: "The light from the moon."
-    },
-    {
-        word: "vibrant",
-        hint: "Full of energy, brightness, and life."
-    },
-    {
-        word: "nostalgia",
-        hint: "A sentimental longing or wistful affection for the past."
-    },
-    {
-        word: "brilliant",
-        hint: "Exceptionally clever, talented, or impressive."
-    },
 ];
 let wordVue = '';
 let hintVue = '';
 let currentWord;
+let correctLetters = [];
 let wrongAnswerCount = 0;
 const maxAttempts = 6;
 
@@ -294,6 +231,7 @@ function getRandomObject() {
         //show correct letters on the game desk
         [...currentWord].forEach((letter, index) => {
             if (letter === clickedLetter) {
+                correctLetters.push(letter);
                 WordsArea.querySelectorAll("li")[index].innerText = letter;
                 WordsArea.querySelectorAll("li")[index].classList.add("guessed");
             }
@@ -302,7 +240,16 @@ function getRandomObject() {
         wrongAnswerCount += 1;
         gameImg.src = `images/hangman-${wrongAnswerCount}.svg`;
     }
-    gameScore.innerText = `${wrongAnswerCount} / ${maxAttempts}`
+    button.disabled = true;
+    gameScore.innerText = `${wrongAnswerCount} / ${maxAttempts}`;
+    //checking game status
+    if (wrongAnswerCount === maxAttempts) {
+        return gameOver (false);
+    }
+    if (correctLetters.length === currentWord.length) {
+        return gameOver (true);
+    }
+
 
   }
 
