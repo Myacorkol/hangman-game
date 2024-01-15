@@ -24,8 +24,8 @@ const wordList = [
         hint: "the most popular local religion"
     },
     {
-        word: "bananas",
-        hint: "very tasty yellow fruits that grow only on palm trees"
+        word: "banana",
+        hint: "very tasty yellow fruit that grow only on palm trees"
     },
     {
         word: "muaythai",
@@ -88,16 +88,16 @@ const wordList = [
         hint: "The most common transport in Thailand and Asia in general"
     },
     {
-        word: "galaxy",
-        hint: "A vast system of stars, gas, and dust held together by gravity."
+        word: "watermelon",
+        hint: "The largest berry in the world"
     },
     {
         word: "orchestra",
         hint: "A large ensemble of musicians playing various instruments."
     },
     {
-        word: "volcano",
-        hint: "A mountain or hill with a vent through which lava, rock fragments, hot vapor, and gas are ejected."
+        word: "snow",
+        hint: "it is white and cold, in Thailand it can only be seen in the refrigerator"
     },
     {
         word: "novel",
@@ -108,8 +108,8 @@ const wordList = [
         hint: "A three-dimensional art form created by shaping or combining materials."
     },
     {
-        word: "symphony",
-        hint: "A long musical composition for a full orchestra, typically in multiple movements."
+        word: "marijuana",
+        hint: "Which drug is completely legal in Thailand"
     },
     {
         word: "architecture",
@@ -200,8 +200,8 @@ const wordList = [
         hint: "A celestial body that orbits a star and does not produce light of its own."
     },
     {
-        word: "river",
-        hint: "A large natural stream of water flowing in a channel to the sea, a lake, or another such stream."
+        word: "snake",
+        hint: "they are poisonous and crawl on the ground, there are more than 160 species of them in Thailand"
     },
     {
         word: "tropical",
