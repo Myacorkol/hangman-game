@@ -56,10 +56,12 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    color: orange;
 }
 .guessed {
     background-color: transparent;
     margin: -35px 0 35px;
+    color: orange;
 }
 .game-area__hint {
     text-align: center;

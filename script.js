@@ -4,6 +4,12 @@ const WordsArea = document.querySelector(".game-area__secret");
 const hintText = document.querySelector(".game-area__text");
 const gameScore = document.querySelector(".game-area__score");
 const gameImg = document.querySelector(".intro__img");
+//modal
+const modal = document.querySelector(".popup");
+const modalImg = document.querySelector(".popup__img");
+const modalTitle = document.querySelector(".popup__title");
+const modalTextEnd = document.querySelector(".popup__text");
+const modalButton = document.querySelector(".popup__btn");
 const wordList = [
     {
         word: "phuket",
@@ -34,7 +40,7 @@ const wordList = [
         hint: "many tourists stay at this place"
     },
     {
-        word: "Spongebob",
+        word: "spongebob",
         hint: "Are you ready, kids? Aye, aye, Captain! Who lives in a pineapple under the sea?"
     },
     {
@@ -208,7 +214,16 @@ let currentWord;
 let correctLetters = [];
 let wrongAnswerCount = 0;
 const maxAttempts = 6;
-
+//reset game
+const resetGame = () => {
+    correctLetters = [];
+    wrongAnswerCount = 0;
+    gameImg.src = `images/hangman-${wrongAnswerCount}.svg`;
+    gameScore.innerText = `${wrongAnswerCount} / ${maxAttempts}`;
+    keyboard.querySelectorAll('button').forEach(btn => btn.disabled = false);
+    WordsArea.innerHTML = wordVue.split("").map(() => `<li class="letter"></li>`).join("");
+    modal.classList.remove('open');
+}
 //Получаем случайный объект из колекции wordList
 function getRandomObject() {
     const randomIndex = Math.floor(Math.random() * wordList.length);
@@ -221,11 +236,21 @@ function getRandomObject() {
     hintVue = randomObject.hint;
     currentWord = wordVue;
     hintText.innerText = hintVue;
-    WordsArea.innerHTML = wordVue.split("").map(() => `<li class="letter"></li>`).join("");
+    resetGame();
+  }
+  const gameOver = (win) => {
+    setTimeout(() => {
+        //show modal function
+        const modalText = win ? `You won, congratulations!` : `You lose, the correct word was:`;
+        modalImg.src = `images/${win ? 'victory' : 'lost'}.gif`;
+        modalTitle.innerText = `${win ? 'We have a winner' : 'Game over'}`;
+        modalTextEnd.innerHTML = `${modalText} <b>${currentWord}</b>`;
+        modal.classList.add('open');
+    }, 400);
+
   }
 
   const initGame = (button, clickedLetter) => {
-    console.log(button, clickedLetter);
     //check exist or not
     if (currentWord.includes(clickedLetter)) {
         //show correct letters on the game desk
@@ -262,4 +287,8 @@ for (let i = 97; i <= 122; i += 1) {
 }
 getRandomObject();
 setRandomInfo();
+modalButton.addEventListener('click', function() {
+    getRandomObject();
+    setRandomInfo();
+})
 console.log(wordVue, hintVue);
