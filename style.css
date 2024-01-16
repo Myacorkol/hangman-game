@@ -20,7 +20,7 @@ body {
     max-width: 850px;
     width: 100%;
     margin: 0 10px;
-    background-color: aqua;
+    background: linear-gradient(to bottom, #ffffff, #800080);
     display: flex;
     align-items: flex-end;
     gap: 70px;
@@ -168,6 +168,9 @@ body {
     }
     .game-area__hint {
         font-size: 14px;
+    }
+    .popup__content {
+        max-width: 353px;
     }
   }
   @media (max-width: 465px) {
