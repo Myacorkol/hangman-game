@@ -11,10 +11,10 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: aquamarine;
     background-image: url('./images/thailand-1400x788-1.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .container {
     max-width: 850px;
@@ -51,6 +51,8 @@ body {
     justify-content: center;
     gap: 10px;
     list-style: none;
+    padding: 0 5px;
+
 }
 .game-area__secret .letter {
     width: 25px;

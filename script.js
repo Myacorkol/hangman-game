@@ -152,8 +152,8 @@ const wordList = [
         hint: "A dense forest characterized by high rainfall and biodiversity."
     },
     {
-        word: "theater",
-        hint: "A building or outdoor area in which plays, movies, or other performances are staged."
+        word: "andaman",
+        hint: "On the shore of which sea is the Kingdom of Thailand located?"
     },
     {
         word: "monkeys",
@@ -164,20 +164,16 @@ const wordList = [
         hint: "What language do you need to know to communicate with foreigners?"
     },
     {
-        word: "desert",
-        hint: "A barren or arid land with little or no precipitation."
-    },
-    {
         word: "sunflower",
         hint: "A tall plant with a large yellow flower head."
     },
     {
-        word: "fantasy",
-        hint: "A genre of imaginative fiction involving magic and supernatural elements."
+        word: "april",
+        hint: "In what month is Thai New Year celebrated?"
     },
     {
-        word: "telescope",
-        hint: "An optical instrument used to view distant objects in space."
+        word: "illuzion",
+        hint: "the name of the most popular club on the island of Phuket"
     },
     {
         word: "breeze",
@@ -196,8 +192,8 @@ const wordList = [
         hint: "An expedition or journey, typically to observe wildlife in their natural habitat."
     },
     {
-        word: "planet",
-        hint: "A celestial body that orbits a star and does not produce light of its own."
+        word: "tenge",
+        hint: "You can get sick of it if you'll be bitten by mosquitoes while on vacation"
     },
     {
         word: "snake",
