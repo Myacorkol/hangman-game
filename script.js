@@ -1,3 +1,94 @@
+    //download html structure
+    // Создаем структуру сайта в виде DOM-элементов
+    const container = document.createElement('div');
+    container.className = 'container';
+
+    const introInner = document.createElement('div');
+    introInner.className = 'intro__inner';
+
+    const intoImg = document.createElement('img');
+    intoImg.className = 'intro__img';
+    intoImg.src = 'images/hangman-0.svg';
+
+    const intoTitle = document.createElement('h1');
+    intoTitle.className = 'title';
+    intoTitle.textContent = 'Hangman game';
+
+    const intoSubTitle = document.createElement('h3');
+    intoSubTitle.className = 'subtitle';
+    intoSubTitle.textContent = 'Thai questions';
+
+    const gameAreaEl = document.createElement('div');
+    gameAreaEl.className = 'game-area';
+
+    const gameAreaList = document.createElement('ul');
+    gameAreaList.className = 'game-area__secret';
+
+    const gameAreaText = document.createElement('p');
+    gameAreaText.className = 'game-area__hint';
+    gameAreaText.textContent = 'Hint:';
+
+    const gameAreaQuestion = document.createElement('b');
+    gameAreaQuestion.className = 'game-area__text';
+
+    const gameAreaQuesses = document.createElement('p');
+    gameAreaQuesses.className = 'game-area__guesses';
+    gameAreaQuesses.textContent = 'Hint:';
+
+    const gameAreaSc = document.createElement('b');
+    gameAreaSc.className = 'game-area__score';
+
+    const gameAreaKey = document.createElement('div');
+    gameAreaKey.className = 'game-area__keyboard';
+
+    //popup
+
+    const popupDiv = document.createElement('div');
+    popupDiv.className = 'popup';
+
+    const popupContent = document.createElement('div');
+    popupContent.className = 'popup__content';
+
+    const popupImage = document.createElement('img');
+    popupImage.className = 'popup__img';
+    popupImage.src = 'images/lost.gif';
+
+    const popupTitleItem = document.createElement('h3');
+    popupTitleItem.className = 'popup__title';
+    popupTitleItem.textContent = 'Game over';
+
+    const gameAreaTextItem = document.createElement('p');
+    gameAreaTextItem.className = 'popup__text';
+
+    const gameAreaBtnItem = document.createElement('button');
+    gameAreaBtnItem.className = 'popup__btn';
+    gameAreaBtnItem.textContent = 'Play again:';
+
+
+
+    // Получаем тег body и добавляем в него контейнер
+    const body = document.querySelector('body');
+    body.appendChild(container);
+    body.appendChild(popupDiv);
+    // Добавляем элементы в контейнер
+    container.appendChild(introInner);
+    container.appendChild(gameAreaEl);
+    introInner.appendChild(intoImg);
+    introInner.appendChild(intoTitle);
+    introInner.appendChild(intoSubTitle);
+    gameAreaEl.appendChild(gameAreaList);
+    gameAreaEl.appendChild(gameAreaText);
+    gameAreaText.appendChild(gameAreaQuestion);
+    gameAreaEl.appendChild(gameAreaQuesses);
+    gameAreaQuesses.appendChild(gameAreaSc);
+    gameAreaEl.appendChild(gameAreaKey);
+    popupDiv.appendChild(popupContent);
+    popupContent.appendChild(popupImage);
+    popupContent.appendChild(popupTitleItem);
+    popupContent.appendChild(gameAreaTextItem);
+    popupContent.appendChild(gameAreaBtnItem);
+
+
 
 const keyboard = document.querySelector(".game-area__keyboard");
 const WordsArea = document.querySelector(".game-area__secret");
@@ -210,6 +301,7 @@ let currentWord;
 let correctLetters = [];
 let wrongAnswerCount = 0;
 const maxAttempts = 6;
+
 //reset game
 const resetGame = () => {
     correctLetters = [];
